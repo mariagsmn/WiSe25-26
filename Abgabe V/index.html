@@ -1,27 +1,26 @@
 <html>
-    <head>
-        <meta name="apple-mobile-web-app-capable" content="yes"> 
-        <script src="js/aframe-v1.5.0.min.js"></script>
-        <script src="js/aframe-marker-ar.js"></script>
-    </head>
 
-    <body>
-        <a-scene embedded arjs="sourceType: webcam;" vr-mode-ui="enabled: false">
-            
-            <a-assets>
-                <video id="videoclip" preload="auto"
-                    src="MusicVideo.mp4" 
-                    width="160" height="90" autoplay loop="true"
-                    crossOrigin="anonymous" muted></video>
-            </a-assets>
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="js/aframe-v1.5.0.min.js"></script>
+    <script src="js/aframe-marker-ar.js"></script>
+</head>
 
-            
-            <a-marker type="pattern" url="pattern/pattern-play-button.patt">
-                <a-plane width="5.4" height="5.4" position="0 0 0" play-on-click material="shader: flat; src: #videoclip" geometry="" rotation="-90 0 0"></a-plane>
-            </a-marker>
+<body>
+    <a-scene embedded arjs="sourceType: webcam;" vr-mode-ui="enabled: false">
 
+        <a-assets>
+            <video id="videoclip" preload="auto" src="MusicVideo.mp4" width="160" height="90" autoplay loop="true"
+                crossOrigin="anonymous" muted></video>
+        </a-assets>
+
+
+        <a-marker type="pattern" url="pattern/pattern-play-button.patt">
+            <a-plane width="5.4" height="5.4" position="0 0 0" play-on-click material="shader: flat; src: #videoclip"
+                geometry="" rotation="-90 0 0"></a-plane>
+        </a-marker>
             <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+    </a-scene>
+</body>
 
 </html>
