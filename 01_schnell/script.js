@@ -1,37 +1,16 @@
-const titleContainer = document.getElementById('title-container');
-const canvas = document.getElementById('IDcanvas');
-const context = canvas.getContext('2d');
+// Konstanten
+const canvas = document.getElementById("meinCanvas");
+const ctx = canvas.getContext("2d");
 
-window.addEventListener('resize', updateCanvasSize);
-updateCanvasSize();
+const FARBE = "lightgreen";   // Konstante für Farbe
+const START_X = 40;           // Startposition X
+const START_Y = 30;           // Startposition Y
 
-/* canvas */
-function updateCanvasSize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-
-    context.fillStyle = "rgba (255, 0, 0, 0.5";
-    context.strokeStyle = "rgba (255, 0, 0, 0.5";
-    context.lineWidth = 3;
-
-    for (let i = 0; i < 10; i++) {
-        context.beginPath();
-
-        const r = (Math.random() * 256);
-        const g = (Math.random() * 256);
-        const b = (Math.random() * 256);
-
-        context.fillStyle = 
-        context.strokeStyle = 
-
-        const x = Math.random() * 1000;
-        const y = Math.random() * 1000;
-        context.moveTo(x, y);
-        context.arc(x, y, 100, 0.1 * Math.PI, 1.9 * Math.PI);
-        context.lineTo(x, y);
-
-        context.fill();
-        context.stroke();
-    }
+// Funktion, die ein Rechteck zeichnet
+function zeichneRechteck(breite, hoehe) {
+    ctx.fillStyle = FARBE;
+    ctx.fillRect(START_X, START_Y, breite, hoehe);
 }
+
+// Aufruf der Funktion
+zeichneRechteck(200, 80);
