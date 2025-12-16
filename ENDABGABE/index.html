@@ -38,7 +38,7 @@
     <a-marker type="pattern" src="assets/pattern-play-button.patt" id="marker" size="1">
 
       <!-- Start-Button -->
-      <a-plane id="startBtn" color="#88c0fc" width="1.4" height="0.5" position="0 0 0.15" rotation="-90 0 0"
+      <a-plane id="startButton" color="#88c0fc" width="1.4" height="0.5" position="0 0 0.15" rotation="-90 0 0"
         class="clickable">
 
         <!-- Text im Button -->
@@ -55,7 +55,7 @@
 
   <script>
     // Klick-Event stabilisieren
-    document.querySelector("#startBtn").addEventListener("click", (e) => {
+    document.querySelector("#startButton").addEventListener("click", (e) => {
       e.stopPropagation();
       alert("🎉 Start gedrückt! → Als nächstes: Eier auswählen!");
       // HIER später: Eier anzeigen lassen!
