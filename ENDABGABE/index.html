@@ -30,7 +30,7 @@
   <a-scene embedded arjs="sourceType: webcam; detectionMode: mono_and_matrix; debugUIEnabled: false;">
 
     <!-- Marker mit Button drauf -->
-    <a-marker type="pattern" url="ENDABGABE/assets/pattern-play-button.patt" id="marker" size="1">
+    <a-marker type="pattern" url="assets/pattern-play-button.patt" id="marker" size="1">
 
       <!-- Start-Button -->
       <a-plane id="startBtn"
@@ -53,17 +53,13 @@
     </a-marker>
 
     <!-- Kamera -->
-    <a-entity camera></a-entity>
-  </a-scene>
+<a-entity
+  camera
+  cursor="fuse: false; rayOrigin: mouse"
+  raycaster="objects: .clickable">
+</a-entity>
 
-  <script>
-    // Klick-Event stabilisieren
-    document.querySelector("#startBtn").addEventListener("click", (e) => {
-      e.stopPropagation();
-      alert("🎉 Start gedrückt! → Als nächstes: Eier auswählen!");
-      // HIER später: Eier anzeigen lassen!
-    });
-  </script>
+  </a-scene>
 
 </body>
 </html>
