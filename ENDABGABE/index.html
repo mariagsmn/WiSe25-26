@@ -29,18 +29,18 @@
 
   <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
 
-    <!-- Marker -->
+    <!-- Marker mit Button -->
     <a-marker type="pattern" url="assets/pattern-play-button.patt" id="marker" size="1">
 
-
-      <!-- Start-Button -->
+      <!-- Start-Button (initial unsichtbar) -->
       <a-plane id="startBtn"
                class="clickable"
                color="#88c0fc"
                width="1.2"
                height="0.5"
                position="0 1 0"
-               rotation="0 0 0">
+               rotation="0 0 0"
+               visible="false">
         <a-text value="Start Game"
                 align="center"
                 color="black"
@@ -58,20 +58,10 @@
 
   </a-scene>
 
-  <!-- Button Event -->
-  <script>
-    AFRAME.registerComponent('start-button', {
-      init: function () {
-        this.el.addEventListener('click', () => {
-          alert("🎉 Start gedrückt! → Als nächstes: Eier auswählen!");
-          // Später: Button ausblenden und Eier anzeigen
-          // this.el.setAttribute('visible', 'false');
-        });
-      }
-    });
-
-    document.querySelector('#startBtn').setAttribute('start-button', '');
-  </script>
+  <!-- JS-Datei mit Marker-Logik -->
+  <script src="scene.js"></script>
 
 </body>
+</html>
+
 </html>
