@@ -1,25 +1,31 @@
-const startBtn = document.querySelector("#startBtn");
 const marker = document.querySelector("#marker");
+const arBtn = document.querySelector("#ar-button");
 
 let buttonVisible = false;
 
+// Marker erkannt → Button anzeigen
 marker.addEventListener("markerFound", () => {
-  startBtn.setAttribute("visible", "true");
+  arBtn.style.display = "block";
   buttonVisible = true;
 });
 
+// Marker verloren → Button ausblenden
 marker.addEventListener("markerLost", () => {
-  startBtn.setAttribute("visible", "false");
+  arBtn.style.display = "none";
   buttonVisible = false;
 });
 
-// Eventlistener nur reagieren, wenn Marker sichtbar & echte Interaktion
-startBtn.addEventListener("click", (evt) => {
-  if (!buttonVisible) return;  // verhindert sofortigen Trigger
-  if (evt.type === "click" || evt.type === "touchstart") {
-    alert("🎉 Start gedrückt!");
-  }
+// Klick / Touch
+arBtn.addEventListener("click", () => {
+  if (!buttonVisible) return;
+  alert("🎉 Start gedrückt!");
 });
+
+arBtn.addEventListener("touchstart", () => {
+  if (!buttonVisible) return;
+  alert("🎉 Start gedrückt!");
+});
+
 
 
 
