@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
-  <title>AR Pet – Start Szene</title>
+  <title>AR Pet - Start Szene</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="scene.js" defer ></script>
 </head>
 
 <body>
   <div id="start-msg">Richte die Kamera auf den Marker</div>
-  <div id="ar-button">Start Game</div> 
+  <div id="ar-button">Start Game</div>
 
-  <a-scene
-    embedded
-    vr-mode-ui="enabled: false"
-    renderer="logarithmicDepthBuffer: true;"
+  <a-scene embedded vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true;"
     arjs="sourceType: webcam; facingMode: environment; debugUIEnabled: false;">
 
     <a-marker type="pattern"
@@ -24,9 +23,8 @@
     </a-marker>
 
     <a-entity camera look-controls></a-entity>
-
   </a-scene>
 
-  <script src="scene.js"></script>
 </body>
+
 </html>

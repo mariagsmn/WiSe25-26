@@ -18,14 +18,15 @@ body { margin: 0; overflow: hidden; }
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #5dc9ab;
+    background-color: #ff7dd8;
     color: black;
     padding: 12px 24px;
     border-radius: 12px;
     font-family: sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
     display: none; 
     cursor: pointer;
     z-index: 1000;
 }
+

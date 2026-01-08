@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #b7e3ff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #e6ace0;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.info {
+    margin-bottom: 30px;
+}
+
+#status {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#reset-btn {
+    background-color: #e6ace0;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset-btn:hover {
+    background-color: #a87db3;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 30px 0;
+    background-color: #d3bfd9;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.cell {
+    background-color: white;
+    border: none;
+    width: 100%;
+    aspect-ratio: 1;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+    transform: scale(0.98);
+}
+
+.cell.taken {
+    cursor: not-allowed;
+    background-color: #e8e8e8;
+}
+
+.cell {
+    color: #000000;
+}
+
+.stats p {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .cell {
+        font-size: 2.5em;
+    }
+}
