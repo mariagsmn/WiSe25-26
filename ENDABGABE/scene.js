@@ -1,26 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
+const marker = document.querySelector("#marker");
+const arBtn = document.querySelector("#ar-button");
 
-    const startBtn = document.querySelector("#startBtn");
+let buttonVisible = false;
 
-    // Button wird nur auslösbar, wenn man drauf tippt
-    startBtn.addEventListener("click", () => {
-        alert("🎉 Start gedrückt! → Als nächstes: Eier anzeigen!");
-
-        // Später: Button ausblenden und Eier laden
-        // startBtn.setAttribute("visible", "false");
-    });
-
+// Marker erkannt → Button anzeigen
+marker.addEventListener("markerFound", () => {
+  arBtn.style.display = "block";
+  buttonVisible = true;
 });
 
+// Marker verloren → Button ausblenden
+marker.addEventListener("markerLost", () => {
+  arBtn.style.display = "none";
+  buttonVisible = false;
+});
 
-    AFRAME.registerComponent('start-button', {
-      init: function () {
-        this.el.addEventListener('click', () => {
-          alert("🎉 Start gedrückt! → Als nächstes: Eier auswählen!");
-          // Später: Button ausblenden und Eier anzeigen
-          // this.el.setAttribute('visible', 'false');
-        });
-      }
-    });
+// Klick / Touch
+arBtn.addEventListener("click", () => {
+  if (!buttonVisible) return;
+  alert("🎉 Start gedrückt!");
+});
 
-    document.querySelector('#startBtn').setAttribute('start-button', '');
+arBtn.addEventListener("touchstart", () => {
+  if (!buttonVisible) return;
+  alert("🎉 Start gedrückt!");
+});
