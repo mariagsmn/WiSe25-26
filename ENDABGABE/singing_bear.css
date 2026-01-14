@@ -38,8 +38,8 @@ body {
 }
 
 .bear-image {
-  max-width: 800px;
-  width: 100%;
+  max-width: none;
+  width: 130%;
   height: auto;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
