@@ -25,7 +25,7 @@ body {
 }
 
 h1 {
-    color: #e6ace0;
+    color: #c72a09;
     margin-bottom: 20px;
     font-size: 2.5em;
 }
@@ -42,7 +42,7 @@ h1 {
 }
 
 #reset-btn {
-    background-color: #e6ace0;
+    background-color: #c72a09;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -53,7 +53,7 @@ h1 {
 }
 
 #reset-btn:hover {
-    background-color: #a87db3;
+    background-color: #830900;
 }
 
 .game-board {
@@ -61,7 +61,7 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin: 30px 0;
-    background-color: #d3bfd9;
+    background-color: #d47e6d;
     padding: 10px;
     border-radius: 15px;
 }
@@ -113,4 +113,33 @@ h1 {
     .cell {
         font-size: 2.5em;
     }
+}
+
+/* Back Button */
+.back-btn {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 10000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: linear-gradient(145deg, #ffffff, #e6f0ff);
+  color: #1f2937;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(30, 50, 80, 0.12);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(30, 50, 80, 0.16);
+}
+
+.back-btn:active {
+  transform: translateY(0);
 }

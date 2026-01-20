@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8">
-  <title>AR Pet - Start Szene</title>
+  <title>AR Pet – Start Szene</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script src="scene.js" defer ></script>
+  <script src="scene.js" defer></script>
 </head>
 
 <body>
   <div id="start-msg">Richte die Kamera auf den Marker</div>
-  <div id="ar-button">Start Game</div>
+  <div id="ar-button">Start Game</div> 
 
-  <a-scene embedded vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true;"
+  <a-scene
+    embedded
+    vr-mode-ui="enabled: false"
+    renderer="logarithmicDepthBuffer: true;"
     arjs="sourceType: webcam; facingMode: environment; debugUIEnabled: false;">
 
     <a-marker type="pattern"
@@ -23,8 +25,37 @@
     </a-marker>
 
     <a-entity camera look-controls></a-entity>
+    
   </a-scene>
 
-</body>
+  <script>
+    const marker = document.querySelector("#marker");
+    const arBtn = document.querySelector("#ar-button");
+    let buttonVisible = false;
 
+    // Marker erkannt → Button anzeigen
+    marker.addEventListener("markerFound", () => {
+      arBtn.style.display = "block";
+      buttonVisible = true;
+    });
+
+    marker.addEventListener("markerLost", () => {
+      arBtn.style.display = "none";
+      buttonVisible = false;
+    });
+
+    // Klick auf Button → Weiterleitung zur Ei-Seite
+    const newPageURL = "room.html"; // Name der neuen HTML-Datei mit Ei-Animation
+    arBtn.addEventListener("click", () => {
+      if (!buttonVisible) return;
+      window.location.href = newPageURL;
+    });
+
+    arBtn.addEventListener("touchstart", () => {
+      if (!buttonVisible) return;
+      window.location.href = newPageURL;
+    });
+  </script>
+</body>
 </html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>AR Pet – Spiel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="room.css">
+  <script src="room.js" defer></script>
+</head>
+<body>
+  <div id="container">
+    <!-- Top Sidebar mit Stats -->
+    <div id="sidebar-top" class="sidebar-top">
+      <div class="stat-item">
+        <div class="stat-label">Food</div>
+        <div class="stat-bar">
+          <div class="stat-fill" id="hunger-fill"></div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Energy</div>
+        <div class="stat-bar">
+          <div class="stat-fill" id="energy-fill"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Spielfläche / Raum -->
+    <div id="play-area">
+
+      <!-- Ei (klickbar) -->
+      <img id="egg" src="assets/egg.png" alt="Rosa Ei">
+      <img id="pet" src="assets/bear.png" alt="Tier">
+
+      <!-- Linke Sidebar -->
+      <div id="sidebar-left" class="sidebar">
+        <button class="side-btn" id="feed">🍔</button>
+        <button class="side-btn" id="sleep">💡</button>
+      </div>
+
+      <!-- Rechte Sidebar -->
+      <div id="sidebar-right" class="sidebar">
+        <button class="side-btn" id="tic-tac-toe" onclick="location.href='tictactoe.html'">🎮</button>
+        <button class="side-btn" id="sing" onclick="location.href='singing_bear.html'">🎶</button> 
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -60,3 +60,25 @@ body {
   max-width: 400px;
   margin-top: 20px;
 }
+/* ...existing code... */
+
+.back-btn {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 10000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: linear-gradient(145deg, #ffffff, #e6f0ff);
+  color: #1f2937;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(30, 50, 80, 0.12);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.back-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(30,50,80,0.16); }
+.back-btn:active { transform: translateY(0); }
