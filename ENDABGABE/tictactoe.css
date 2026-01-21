@@ -89,7 +89,7 @@ h1 {
 
 .cell.taken {
     cursor: not-allowed;
-    background-color: #e8e8e8;
+    background-color: #f5f5f5e5;
 }
 
 .cell {

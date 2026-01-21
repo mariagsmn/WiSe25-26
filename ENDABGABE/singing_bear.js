@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // 1. ELEMENTE FINDEN  
+  
   // Sucht Bären-Bild (damit wir wissen wo es ist)
   const bearImage = document.getElementById('bearImage');
 
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // 2. KLICK AUF BÄREN = MUSIK SPIELEN/PAUSIEREN
+
   // Wenn der Benutzer auf den Bären klickt...
   bearImage.addEventListener('click', () => {
     // Prüft ob Musik gerade spielt
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       audioPlayer.currentTime = 0;
     }
   });
+
 
   // 3. MUSIK-WIEDERHOLEN (am Ende wieder von vorne spielen)
 
