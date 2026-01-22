@@ -158,89 +158,90 @@ function computerMove() {
     //  SPIELER IST WIEDER DRAN
     currentPlayer = 'O'; // Wechsle zum Spieler
     statusDisplay.textContent = 'Du bist am Zug';
+}
 
 
-    // 6. GEWINN-PRÜFUNG
+// 6. GEWINN-PRÜFUNG
 
-    // Prüft ob jemand gewonnen hat
-    function checkWinner() {
-        for (let i = 0; i < winningConditions.length; i++) { // Geht durch alle 8 möglichen Gewinn-Kombinationen
-            // Hole die 3 Feld-Positionen aus der aktuellen Gewinn-Kombination
-            const a = winningConditions[i][0];
-            const b = winningConditions[i][1];
-            const c = winningConditions[i][2];
+// Prüft ob jemand gewonnen hat
+function checkWinner() {
+    for (let i = 0; i < winningConditions.length; i++) { // Geht durch alle 8 möglichen Gewinn-Kombinationen
+        // Hole die 3 Feld-Positionen aus der aktuellen Gewinn-Kombination
+        const a = winningConditions[i][0];
+        const b = winningConditions[i][1];
+        const c = winningConditions[i][2];
 
-            // Prüft: 
-            // 1. board[a] ist nicht leer (existiert ein Zeichen?)
-            // 2. board[a] === board[b] (sind die Zeichen gleich?)
-            // 3. board[a] === board[c] (sind alle 3 gleich?)
-            if (board[a] && board[a] === board[b] && board[a] === board[c]) { 
-                return true; // Es gibt einen Gewinner!
-            }
+        // Prüft: 
+        // 1. board[a] ist nicht leer (existiert ein Zeichen?)
+        // 2. board[a] === board[b] (sind die Zeichen gleich?)
+        // 3. board[a] === board[c] (sind alle 3 gleich?)
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) { 
+            return true; // Es gibt einen Gewinner!
         }
-        return false; // Noch kein Gewinner
     }
+    return false; // Noch kein Gewinner
+}
 
-    // 7. UNENTSCHIEDEN-PRÜFUNG
+// 7. UNENTSCHIEDEN-PRÜFUNG
 
-    // Prüft ob das Spiel unentschieden ist
-    function checkDraw() {
-        // Prüfe: Ist JEDES Feld auf dem Brett besetzt?
-        for (let i = 0; i < board.length; i++) { // Geht durch alle 9 Felder
-            if (board[i] === '') { // Prüft ob Feld leer ist
-                return false; // Mindestens ein Feld ist noch leer --> kein Unentschieden
-            }
+// Prüft ob das Spiel unentschieden ist
+function checkDraw() {
+    // Prüfe: Ist JEDES Feld auf dem Brett besetzt?
+    for (let i = 0; i < board.length; i++) { // Geht durch alle 9 Felder
+        if (board[i] === '') { // Prüft ob Feld leer ist
+            return false; // Mindestens ein Feld ist noch leer --> kein Unentschieden
         }
-        return true; // Alle Felder sind besetzt, Unentschieden!
     }
+    return true; // Alle Felder sind besetzt, Unentschieden!
+}
 
 
-    // 8. SPIEL ZURÜCKSETZEN
+// 8. SPIEL ZURÜCKSETZEN
 
-    // Setzt das Spiel auf  Anfang zurück
-    function resetGame() {
-        // Leert alle Felder
-        board = ['', '', '', '', '', '', '', '', ''];
+// Setzt das Spiel auf  Anfang zurück
+function resetGame() {
+    // Leert alle Felder
+    board = ['', '', '', '', '', '', '', '', ''];
 
-        // Spieler fängt an
-        currentPlayer = 'O';
+    // Spieler fängt an
+    currentPlayer = 'O';
 
-        // Spiel ist aktiv
-        gameActive = true;
+    // Spiel ist aktiv
+    gameActive = true;
 
-        // Update Status-Text
-        statusDisplay.textContent = 'Du bist am Zug';
+    // Update Status-Text
+    statusDisplay.textContent = 'Du bist am Zug';
 
-        // Geht durch alle Felder und leert sie
-        cells.forEach(cell => {
-            cell.textContent = ''; // Entferne O oder X
-            cell.classList.remove('taken'); // Entferne CSS-Klasse
-        });
-    }
-
-
-    // 9. NEUES SPIEL-BUTTON
-
-    // Wenn der Benutzer auf "Neues Spiel" klickt, resetet das Spiel sich wieder
-    resetBtn.addEventListener('click', resetGame);
+    // Geht durch alle Felder und leert sie
+    cells.forEach(cell => {
+        cell.textContent = ''; // Entferne O oder X
+        cell.classList.remove('taken'); // Entferne CSS-Klasse
+    });
+}
 
 
-    // 10. ZURÜCK-BUTTON 
+// 9. NEUES SPIEL-BUTTON
 
-    // Prüft ob zurück-Button existiert
-    if (backBtn) {
-        // Wenn  Benutzer auf den Zurück-Button klickt...
-        backBtn.addEventListener('click', () => {
-            // Sagt: Überspringe die Ei-Animation
-            // Verhindert dass der Benutzer das Ei nochmal sehen muss
-            sessionStorage.setItem('skipEggAnimation', '1');
+// Wenn der Benutzer auf "Neues Spiel" klickt, resetet das Spiel sich wieder
+resetBtn.addEventListener('click', resetGame);
 
-            // Navigiere zur Hauptseite
-            window.location.href = 'room.html';
-            // Wie ein Neustart, Seite lädt neu
-            // Aber ohne Ei-Animation weil wir das Flag gesetzt haben!
-        });
-    }
+
+// 10. ZURÜCK-BUTTON 
+
+// Prüft ob zurück-Button existiert
+if (backBtn) {
+    // Wenn  Benutzer auf den Zurück-Button klickt...
+    backBtn.addEventListener('click', () => {
+        // Sagt: Überspringe die Ei-Animation
+        // Verhindert dass der Benutzer das Ei nochmal sehen muss
+        sessionStorage.setItem('skipEggAnimation', '1');
+
+        // Navigiere zur Hauptseite
+        window.location.href = 'room.html';
+        // Wie ein Neustart, Seite lädt neu
+        // Aber ohne Ei-Animation weil wir das Flag gesetzt haben!
+    });
+}
 
 /* Zusammengefasst:
    
@@ -252,4 +253,3 @@ function computerMove() {
    6. Prüfe ob Unentschieden → Falls ja, Spiel Ende
    7. Zurück zum Schritt 1
 */
-}

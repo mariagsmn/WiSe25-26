@@ -205,9 +205,9 @@ document.addEventListener("DOMContentLoaded", () => {
     __statsInterval = null; // Variable zurücksetzen
   }
 
-  // Funktion: Initialisiere die Stats (am Anfang oder nach Ei-Schlüpfen)
+  // zeigt Stats (am Anfang oder nach Ei-Schlüpfen)
   function initStats() {
-    updateStatsUI(); // Update die Grafik einmal
+    updateStatsUI(); // Updatet die Grafik einmal
     startStatsInterval(); // Starte den regelmäßigen Timer
     if (sidebarTop) sidebarTop.classList.add("visible"); // Zeige die Top-Sidebar
   }
@@ -508,7 +508,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.fill();
   }
 
-  
+
   // 17. DRAG & DROP BURGER
 
   // setzt das Fütter-System auf
